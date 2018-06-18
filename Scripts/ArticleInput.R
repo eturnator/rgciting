@@ -15,8 +15,15 @@ dataSetD <- read.delim("data/WOS_SciSocSci_Research_Gate_20180531.txt", sep="\t"
 cleanColumn <- function(data, id){
   AID <- seq(nrow(data))
   AID <- paste(id, formatC(AID, width=3, flag="0"), sep="")
+  Format <- NA
+  Valid <- NA
+  Fulltext_Available <-NA
+  DOI_Available <- NA
+  Link_Available <- NA
+  RG_Details <- NA
+  Work_Type <- NA
   emptyColumns <- sapply(data, function (x) all(is.na(x)))
-  data <- cbind(data[!emptyColumns])
+  data <- cbind(AID, Format, Valid, Fulltext_Available, DOI_Available, Link_Available, RG_Details, Work_Type, data[!emptyColumns])
 }
 
 #run cleanColumn function over data sets
@@ -26,7 +33,7 @@ dataSetC <- cleanColumn(dataSetC, 'C')
 dataSetD <- cleanColumn(dataSetD, 'D')
 
 #write altered data to csv files
-write.csv(dataSetA, "Cleaned_Data/WOS_SciConf_ResearchGate_20180531.csv")
+write.csv(dataSetA, "Cleaned_Data/WOS_SciConf_ResearchGate_20180617.csv")
 write.csv(dataSetB, "Cleaned_Data/WOS_SciConf_Research_Gate_20180531.csv")
 write.csv(dataSetC, "Cleaned_Data/WOS_SciSocSci_ResearchGate_20180531.csv")
 write.csv(dataSetD, "Cleaned_Data/WOS_SciSocSci_Research_Gate_20180531.csv")
