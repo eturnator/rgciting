@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1529355394100.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "53F8BB71",
+    "lastKnownWriteTime" : 1529353446,
+    "last_content_update" : 1529353446,
+    "path" : "Z:/Research/ResearchGateCiting/RProject/rgciting/Scripts/ArticleInput.R",
+    "project_path" : "Scripts/ArticleInput.R",
+    "properties" : {
+        "cursorPosition" : "2,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
