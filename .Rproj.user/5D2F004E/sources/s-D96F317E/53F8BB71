@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "53F8BB71",
-    "lastKnownWriteTime" : 1529353446,
-    "last_content_update" : 1529353446,
+    "lastKnownWriteTime" : 1530648548,
+    "last_content_update" : 1530648549987,
     "path" : "Z:/Research/ResearchGateCiting/RProject/rgciting/Scripts/ArticleInput.R",
     "project_path" : "Scripts/ArticleInput.R",
     "properties" : {
-        "cursorPosition" : "2,0",
-        "scrollLine" : "0"
+        "cursorPosition" : "47,0",
+        "scrollLine" : "32"
     },
     "relative_order" : 1,
     "source_on_save" : false,
