@@ -40,33 +40,19 @@ WOS_SciConf <- WOS_SciConf[ , ! apply(WOS_SciConf, 2, function(x) all(is.na(x)))
 CleanColumn <- function(data, id){
   #generate AID
   AID <- paste(id, formatC(seq(nrow(data)), width=3, flag="0"), sep="")
-  data <- cbind(AID, data)
-  
-  #duplicate articles with more than 1 times cited
-  for(i in 1:nrow(data)) {
-    for(j in 0:data[i,"TC"]){
-      if(j > 1){
-        data <- rbind(data, data[i,])
-      }
-    }
-  }
-  
-  #sort table
-  data <- data[order(data$"AID"),]
  
   #append new columns
-  new_col_names <- c("CID", "CitedAs", "Locatable", "CitationDetail_RG", "FulltextAvailable", "DOI_RG", "AuthorUpload",
+  new_col_names <- c("CitationDetail_RG", "FulltextAvailable", "DOI_RG", "AuthorUpload",
                      "SourcePubs", "SourcePreprint", "SourceRepo", "SourceWebsite", "SourceURl",
                      "SourceDOI","ItemClass", "Copyrighted", "Licensed", "HCISI")
   new_cols <- matrix(nrow=nrow(data), ncol=length(new_col_names))
   colnames(new_cols) <- new_col_names 
-  AID <- data$"AID"
-  data <- cbind(AID, new_cols, data[,-1])
+  data <- cbind(AID, new_cols, data)
 }
 
 
 #run cleanColumn function over data sets
-WOS_SciConf <- CleanColumn(WOS_SciConf, 'P')
+WOS_SciConf <- CleanColumn(WOS_SciConf, 'A')
 WOS_SciSocSci <- CleanColumn(WOS_SciSocSci, 'E')
 
 #write altered data to csv files
