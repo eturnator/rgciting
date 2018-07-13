@@ -30,6 +30,10 @@ WOS_SciConf <- unique(WOS_SciConf)
 WOS_SciSocSci <- rbind(dataSetC, dataSetD)
 WOS_SciSocSci <- unique(WOS_SciSocSci)
 
+#sort tables by author
+WOS_SciConf <- WOS_SciConf[order(WOS_SciConf$"AU"),]
+WOS_SciSocSci <- WOS_SciSocSci[order(WOS_SciSocSci$"AU"),]
+
 #Identify the records that uniquely retrieved from Sci_SocialSci indexing
 unique_SciSocSci <- setdiff(WOS_SciSocSci, WOS_SciConf)
 
