@@ -1,0 +1,98 @@
+This file records the actions Ye took to double check the questionable sources. 
+
+Original File - WOS_SciConf_20180531.xlsx
+Modified File by Ye - WOS_SciConf_20180531_YeEdited20181113.xlsx
+
+
+AID: A108
+Confirmed source publicaiton not identifiable. 
+Action taken: Added "Not Identifiable" to the SourcePubs column. 
+
+AID: A179
+Confirmed the source is a conference proceeding for the conference Konferensi Nasional Sistem Informasi . A copy of it exists in the repository, researchgate and academia.edu
+http://repository.gunadarma.ac.id 
+Action taken: deleted question mark. 
+
+AID: A193
+Confirmed it's a conference proceeding with no other good source file identified. 
+
+
+AID: A195
+Conifirmed it's a conference proceeding of (Proceedings) 44th Annual Meeting of the European-Society-for-Dermatological-Research (ESDR). The Journal of Investigative Dermatology has a related article (https://www.jidonline.org/article/S0022-202X(15)36534-9/fulltext) but not the same as the proceeding. No online source of fulltext discovered. 
+Action taken: Changed SourcePubs
+Implication -- It's probably better to cite the related journal article rather than the abstract only ResearchGate record. 
+
+AID: A197
+Particularly interesting case. 
+Publihsed by NREL researchers. Posted on NREL site at https://www.nrel.gov/docs/fy11osti/49019.pdf . Mentioned will be presented at The 9th Annual International Workshop on Large-Scale Integration of Wind Power into Power Systems as well as on Transmission Networks for Offshore Wind Power Plants Conference, Québec, Canada; October 18-19, 2010. 
+Existence in the proceeding of 9th International Workshop on Large-Scale Integration of Wind Power into Power Systems as well as on Transmission Networks for Offshore Wind Plants   can be verified here http://windintegrationworkshop.org/wp-content/uploads/sites/11/2016/05/WIW10_Proceedings_Content_Overview.pdf 
+So, the true source is the workshop proceeding. But the NREL site can be considered a true source too. 
+Univerrsity of North Texas site is just a repository archiving the government document. https://digital.library.unt.edu/ark:/67531/metadc1012697/
+It's also funny that ResearchGate didn't find the open fulltext to attach to this record. Wonder why the authors decided to cite the ResearchGate record. 
+Action taken: deleted question marks. Need to look into other fields together. Have a discussion in paper about this one. 
+
+
+AID: A216 and A217
+Confirmed that they are duplicated records. 
+No action taken. Needs to decide what to do together. 
+
+
+AID: A230
+Citation info not matching the record found under this title on ResearchGate. https://www.researchgate.net/publication/232327914_The_cleavage_strength_of_pre-cracked_polycrystals 
+The citation partially match this article N. J. Petch, “The Cleavage Strength of Polycrystals,” Journal of the Iron and Steel Institute, Vol. 174, 1953, pp. 25-28.  .  As can be seen on the following two sites. https://www.scirp.org/(S(351jmbntvnsjt1aadkposzje))/reference/ReferencesPapers.aspx?ReferenceID=426784 
+http://garfield.library.upenn.edu/classics1982/A1982NM35100001.pdf 
+Not sure how the author made the mistake. Another good example to discuss. 
+Action taken: Deleted question mark in SourcePubs. 
+
+
+AID: A244 
+Confirmed from the MEPCON . Fourteenth International Middle East Power Systems Conference (MEPCON’10) Cairo University, Cairo, Egypt, December 19-21, 2010 The title is found in this document http://www.sdaengineering.com/MEPCON10/MEPCON%20Detailed%20Program%20Draft_13%2011%202010.pdf that appeared to be the program of the conference. 
+No fulltext of the proceeding found online. IEEE only has links to 2006, 2008, 2016 and 2017 Proceedings https://ieeexplore.ieee.org/browse/conferences/title//?queryText=International%20Middle%20East%20Power . 
+Action Taken: Deleted question mark and added the full name of the conference. 
+
+
+AID: A249, A250, A251
+Confirmed that they are duplicated records 
+No action taken. Needs to decide what to do together. 
+
+
+AID: A254
+This is a conference proceeding paper of Pharmacology of Cerebral Ischemia 2012. 
+The link to CiteSeer didn't work. 
+Action Taken: Deleted question marks. Changed ItemClass to PROCEEDINGS PAPER
+
+AID: A280
+Link to journal on the article is broken. (Bad sign 1) Found the jounral website but no such issue number as 55 for 2015. And page 3101 of 2015 is not this article. https://www.ripublication.com/Volume/ijaerv10n2.htm  The journal itself is very fishy. Maybe a predatory journal. 
+No action taken yet. Should look at it together and discuss this case too to show how it may seem valid in a PDF. But once you go to the tru source, you can see warning signs. 
+
+AID: A294 
+May consider to exclude since even the abstract is not in English. Searching the conference title wasn't easy to locate a page. 
+
+
+AID: A298
+This is a magazine. Found the fulltext at 
+https://opensourceforu.com/2015/08/testing-video-transmission-in-ns-2-using-the-evalvid-framework/ 
+Action taken: Deleted question mark. Added direct link to URL. 
+
+AID: A312 
+Another conference proceeding in foreign language. Seem to be a valid conference. But not finding the proceedings. 
+The conference programs seems to be this one https://www.dynamore.de/en/news/meet-dynamore/2014/simvec-2014/Programm%20SIMVEC%202014.pdf . 
+The full title of the conference is Simulation und Erprobung in der Fahrzeugentwicklung
+Action taken: Deleted question mark and changed conference title to the full title. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
