@@ -1,4 +1,7 @@
 #install.packages('plyr')
+
+
+##@knitr part1
 library(plyr)
 
 #determine data paths/read data for citing articles and articles
@@ -23,10 +26,11 @@ article_type <- count(article_data, 'ItemClass')
 
 
 
-
+## @knitr a1
 # a1: how many articles are locatable
 locatable <- count(citing_data, 'Locatable')
-locatable_articles <- citing_data[ (citing_data$Locatable == 'Yes') & (!is.na(citing_data$Locatable)),]
+locatable_articles <- article_data[(article_data$AID %in% citing_data[ (citing_data$Locatable == 'Yes') & (!is.na(citing_data$Locatable)),"AID"]), ]
+
 
 #b1: how many articles were cited as title but have true source
 temp_titles <- unlist(unique(citing_data[(citing_data['CitedAs'] == 'Title'), "AID"])) #removed duplicate AIDs
@@ -63,6 +67,8 @@ oa_num <- article_data[ !is.na(article_data['Licensed']) & article_data['License
 hcisi <- article_data[ !is.na(article_data['HCISI']) & article_data['HCISI']!="No", ]
 
 #Create table to summarize results
+##@knitr tablef
+
 names <- c("A1", "B1", "B2", "B3", "C1", "D1","D2R", "D2P", "D2W", "D3", "D4O", "D4H")
 table <- NULL
 table <- rbind(table,
@@ -80,6 +86,8 @@ table <- rbind(table,
                c("HCISI articles", nrow(hcisi), list(hcisi$AID)))
 table <- data.frame(table)  
 row.names(table) <- names
-colnames(table) <- c("Question", "Number Matches", "AIDs of Matches")               
+colnames(table) <- c("Question", "Number Matches", "AIDs of Matches")
 
+#knitr::kable(table)
+#kableExtra::column_spec(2:3, width = "5cm")
 

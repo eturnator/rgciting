@@ -1,0 +1,42 @@
+
+---
+title: "Data Summary"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache=FALSE)
+knitr::read_chunk('Scripts/PrelimStats.R')
+source('Scripts/PrelimStats.R')
+```
+
+## Introduction
+
+This is a summary of data collected from the citation analysis project regrarding how Research Gate was cited as a source in literature. 
+
+
+```{r initialanalysis, echo=FALSE}
+
+#knitr::read_chunk('PrelimStats.R')  #not working yet. needs to be fixed for the file path in read.table #in the PrelimStats file. 
+
+```
+
+#From Web of Science Cited Reference search,`r nrow(article_data)`  records of cited reference #containing "ResearchGate"" or "Research Gate" was retrieved on ---(filling in date). The number #of articles cited these references were `r nrow(citing_data)`. 
+
+```{r tablef, echo = FALSE}
+```
+```{r create, exec=TRUE, echo=FALSE}
+tablefinal <- table
+x <- knitr::kable(tablefinal, "html")
+kableExtra::column_spec(x, 2, width = "3in")
+```
+  
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
