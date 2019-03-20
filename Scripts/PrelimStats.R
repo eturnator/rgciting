@@ -88,6 +88,4 @@ table <- data.frame(table)
 row.names(table) <- names
 colnames(table) <- c("Question", "Number Matches", "AIDs of Matches")
 
-#knitr::kable(table)
-#kableExtra::column_spec(2:3, width = "5cm")
 

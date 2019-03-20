@@ -1,7 +1,6 @@
 #The ArticleInput.R script is to import the data retrieved from the Cited Work search in Web of Science with the source title as "Research Gate" and "ResearchGate", deduplicate data and generate a data sheet for maunual coding. 
 
 
-
 #load needed packages
 require(dplyr)
 
@@ -10,6 +9,7 @@ require(dplyr)
 #The column heading abbreciations can be interpreted according to the WOS list here https://images.webofknowledge.com/images/help/WOS/hs_wos_fieldtags.html . A copy of it has been saved in file Data/WOSFieldTag.txt
 
 #create function to import data, correct the mistake in column head (extra row.names for the first column). 
+##@knitr OriginalDataSets
 DataIn <- function(filename) {
   data <- read.delim(filename, sep="\t", header = TRUE, row.names = NULL, fill = TRUE, na.strings = c("", " "), stringsAsFactors = FALSE)
   colnames(data) <- c(colnames(data)[-1], "temp")

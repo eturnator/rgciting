@@ -1,42 +1,80 @@
 
+
 ---
-title: "Data Summary"
+title: "Data Methods and Summary"
 output: html_document
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, cache=FALSE)
 knitr::read_chunk('Scripts/PrelimStats.R')
+knitr::read_chunk('Scripts/ArticleInput.R')
 source('Scripts/PrelimStats.R')
+source('Scripts/ArticleInput.R')
 ```
 
 ## Introduction
 
-This is a summary of data collected from the citation analysis project regrarding how Research Gate was cited as a source in literature. 
-
-
-```{r initialanalysis, echo=FALSE}
-
-#knitr::read_chunk('PrelimStats.R')  #not working yet. needs to be fixed for the file path in read.table #in the PrelimStats file. 
+  This is a summary of data aquisition methods and data results from the citation analysis project regrarding how Research Gate was cited as a source in literature. 
+  Figure 1 demonstrates the data aquisition workflow.
+  
+  
+  Table 1 lists the questions that were investigated for each article and citing article. Responses to questions 1 and 2, determined using the Citing Article full text, are stored in the Citing References table. Responses for questions 3-16, relating to the article on ResearchGate, the article's availability from other sources, and original copyright information are stored in the Article Reference Table. 
+```{r QuestionTable, exec = TRUE, echo=FALSE}
+    questionTable <- rbind(
+      c(1, 'CitedAs', 'How “ResearchGate” appears in the Citing Article citation', 'Title; URL; DOI; Article Title; NA; None' ),
+      c(2, 'Locatable', 'Was the ResearchGate article able to be located based off the information in the citation
+', 'Yes; No; NA')
+    )
+questionTable <- data.frame(questionTable)
+colnames(questionTable) <- c('Question', 'Parameter', 'Description', 'Possible Values')
+questionTable <- knitr::kable(questionTable,caption = 'Table 1: Questions Investigated', 'html')
+questionTable <- kableExtra::kable_styling(questionTable, full_width = FALSE)
+kableExtra::column_spec(questionTable, 2:3, width = "3.5in")
 
 ```
 
-#From Web of Science Cited Reference search,`r nrow(article_data)`  records of cited reference #containing "ResearchGate"" or "Research Gate" was retrieved on ---(filling in date). The number #of articles cited these references were `r nrow(citing_data)`. 
+#####Cited Reference Search
+  In Web of Science, the Cited Reference Search locates works with references containing the specified field. To examine how ResearchGate is cited, “ResearchGate” and “Research Gate” were searched under the Cited Reference Search as “Cited Work” on May 31, 2018. Table 2 tallies the number of hits from the Cited Work searches in the Web of Science Conference Proceedings Citation Index and the Web of Science Social Sciences Citation Index.
+
+```{r DataSetsTable, exec=TRUE, echo=FALSE }
+#generate table displaying number of matches for each search term and index
+sourceTable <- cbind(
+  c("Research Gate", "ResearchGate"),
+  c(nrow(dataSetA), nrow(dataSetB)), 
+  c(nrow(dataSetC), nrow(dataSetD)))
+sourceTable <- data.frame(sourceTable)
+colnames(sourceTable) <- c(
+  "Search Term", 
+  "# of Matches: 1980-present Science Conference Proceedings Citation Index",
+  "# of matches: 1974-present Social Sciences Citation Index")
+
+#knit table
+sourceTable <- knitr::kable(sourceTable, caption = "Table 2: Web of Science Cited Reference Query Results", "html") 
+sourceTable <- kableExtra::kable_styling(sourceTable, full_width = FALSE)
+kableExtra::column_spec(sourceTable, 2:3, width = "3.5in")
+
+```
+#####Deduplication Method
+  Since duplicate results may have been yielded by the two search terms, the results from both search term queries for each index were combined and deduplicated, forming one set from each WOS citation index. The deduplicated data set from the Science Conference Proceedings Citation Index was used as the main data set for this study. This set contained `r nrow(article_data)` records.
+
+#####Citing Article Methods
+  Web of Science provides records for one or more Citing Articles that cite the Research Gate article. For each Citing Article, citation information was downloaded as a tab-delimited text file.  The total number of Citing References was `r nrow(citing_data)`. 
+  A full text of each citing article was attempted to be located online from a publisher website, resorting to Google Scholar, repositories, or other websites if the publisher version was unavailable. In the event access to a Citing article was Unavailable, if the publisher provided the article’s references as read-only, a HTML copy of the webpage was saved. If a full text or link to references was unable to be located, the reference was viewed on Web of Science.___________ Citing Article full texts were obtained and __________ webpage references were saved.
+
+
+The Citing Article references were used to determine the CitedAs and Locatable parameters listed in Table 1 (Questions 1 and 2). 
+
+
+
+
 
 ```{r tablef, echo = FALSE}
 ```
 ```{r create, exec=TRUE, echo=FALSE}
 tablefinal <- table
-x <- knitr::kable(tablefinal, "html")
-kableExtra::column_spec(x, 2, width = "3in")
+resultTable <- knitr::kable(tablefinal, "html")
+kableExtra::column_spec(resultTable, 2, width = "3in")
 ```
-  
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+ 
