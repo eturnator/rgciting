@@ -5,9 +5,9 @@
 library(plyr)
 
 #determine data paths/read data for citing articles and articles
-citing_path <- paste(getwd(),"/ProcessedData/WOS_SciConf_CitingArticles.csv", sep="" )
+citing_path <- paste(getwd(),"/ProcessedData/CitingArticleFinalData.csv", sep="" )
 citing_data <- read.csv(citing_path, row.names= NULL, fill = TRUE, header = TRUE, stringsAsFactors = FALSE)
-data_path <- paste(getwd(),"/ProcessedData/WOS_SciConf_20180531_Edited.csv", sep="" )
+data_path <- paste(getwd(),"/ProcessedData/WOS_SciConf_20180531_CollectedData_YeEdited20181113.csv", sep="" )
 article_data <- read.csv(data_path, row.names= NULL, fill = TRUE, header = TRUE, stringsAsFactors = FALSE)
 
 
@@ -87,5 +87,6 @@ table <- rbind(table,
 table <- data.frame(table)  
 row.names(table) <- names
 colnames(table) <- c("Question", "Number Matches", "AIDs of Matches")
+
 
 

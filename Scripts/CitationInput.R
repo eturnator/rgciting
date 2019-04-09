@@ -1,7 +1,7 @@
 #The "CitationInput.R" script is to read in tab-delimited text files containing citations for the cited articles and generate a table to relate AIDs and CIDS and store citing article data 
 
 #Read collected CitedAs, Locatable, and AID data for Citing Articles from spreadsheet
-data_path <- paste(getwd(),"/ProcessedData/SCICONF_Copy.csv", sep="" )
+data_path <- paste(getwd(),"/ProcessedData/CitingArticleCollectedData.csv", sep="" )
 data <- read.csv(data_path, row.names= NULL, fill = TRUE, header = FALSE, stringsAsFactors = FALSE)
 
 #function to generate CIDs
@@ -39,8 +39,7 @@ ReadFiles <- function(data){
     
     final_data <- rbind(final_data, temp_data)
   }
-  print(nrow(final_data))
-  write.csv(final_data, "ProcessedData/WOS_SciConf_CitingArticlesTEST.csv")
+  
   final_data <- cbind(data, final_data)
   print("Files read")
   return(final_data)
@@ -53,5 +52,5 @@ data <- ReadFiles(data)
 data <- data[ , ! apply(data, 2, function(x) all(is.na(x)))]
 
 #write table to file
-write.csv(data, "ProcessedData/WOS_SciConf_CitingArticles.csv", row.names = FALSE)
+write.csv(data, "ProcessedData/CitingArticleFinalData.csv", row.names = FALSE)
 
